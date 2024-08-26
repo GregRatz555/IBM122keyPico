@@ -68,5 +68,9 @@ This diagram is shown looking "into the socket", so this is looking at your sock
 I did not have the time/patience to learn how to move this project to use tinyUSB and implement them myself and it seems that no one has made a nice raspberry pi pico-USB keyboard library that allows for keyboard presses/releases with media controls as well.   
 Well for Arduino anyways. Adafruit makes it available in MicroPython I think but I discovered that much too late to consider rewriting everything in another language.   
 I examined bluemicro_hid but it does not allow for key-releases one at a time, only releasing all keys. If you knew what my bunnyhopping key was for, then you understand why this is unacceptable for a keyboard.  
-So if you're a ~~nerd~~ technically inclined hero, you might take this as a call to action and make that useful raspberry pi pico HID keyboard library, and maybe give me a MR for other ~~nerds~~ vintage computing enthusiasts to make full use of their skateboard-sized keyboard.  
+### Capslock/Numlock lights
+Another thing missing from Keyboard.h and other hid libraries I browsed is the ability to query the OS for what the capslock and numlock states are.  
+In the absence of this, I put some extra code in so that if your capslock/numlock lights are not aligned with what your computer is doing, holding control and pressing those keys will toggle the light to synchronize it with the proper states.  
 
+So if you're a ~~nerd~~ technically inclined hero, you might take this as a call to action and make that useful raspberry pi pico HID keyboard library, and maybe give me a MR for other ~~nerds~~ vintage computing enthusiasts to make full use of their skateboard-sized keyboard.
+.  
